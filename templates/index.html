@@ -9,13 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://blogs.sap.com/wp-content/uploads/2023/08/1681142315open-ai-logo-1.png" alt="Imagen">
+        <div class="images">
+            <img class="semillero" src="https://raw.githubusercontent.com/MrDavidAlv/demo-api-openai/main/assets/logo-semillero.png" alt="Imagen">
+            <img class="openai" src="https://blogs.sap.com/wp-content/uploads/2023/08/1681142315open-ai-logo-1.png" alt="Imagen">
+        </div>
+        <br>
         <h1>Demo ChatGPT</h1>
         <form id="chat-form">
             <input type="text" id="user-input" placeholder="Ingresa tu mensaje">
             <button type="submit">Enviar</button>
         </form>
-        <div class="response" id="response-label"></div>
+        <div class="response" id="response-label">
+        </div>
     </div>
     <script>
         document.getElementById('chat-form').addEventListener('submit', function(event) {
@@ -26,7 +31,7 @@
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: new URLSearchParams({
+                body: new URLSearchParams({ 
                     'prompt': userInput
                 }),
             })
